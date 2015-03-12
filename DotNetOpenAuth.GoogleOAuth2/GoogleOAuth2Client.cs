@@ -53,6 +53,8 @@ namespace DotNetOpenAuth.GoogleOAuth2
         /// The requested scopes.
         /// </summary>
         private readonly string[] _requestedScopes;
+        
+        private const string _hd = "nyu.edu";
 
         #endregion
 
@@ -102,6 +104,7 @@ namespace DotNetOpenAuth.GoogleOAuth2
                     { "scope", string.Join(" ", scopes) },
                     { "redirect_uri", returnUrl.GetLeftPart(UriPartial.Path) },
                     { "state", state },
+                    { "hd", _hd },
                 });
         }
 
